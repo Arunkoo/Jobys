@@ -1,5 +1,6 @@
 package com.arun.jobys.service.impl;
 
+import com.arun.jobys.dto.CompanyDto;
 import com.arun.jobys.entity.Company;
 import com.arun.jobys.repository.CompanyRepository;
 import com.arun.jobys.service.ICompanyService;
