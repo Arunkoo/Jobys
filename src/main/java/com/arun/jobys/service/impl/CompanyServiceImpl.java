@@ -13,8 +13,9 @@ public class CompanyServiceImpl implements ICompanyService {
     private final CompanyRepository companyRepository;
 
     @Override
-    public List<Company> getAllCompanies() {
-        return companyRepository.findAll();
+    public List<CompanyDto> getAllCompanies() {
+        List<Company> companylist = companyRepository.findAll();
+        return companylist.stream().map(this::transferCompanyDto).collect(Collectors.toList());
     }
 
     private CompanyDto transferCompanyDto(Company company){
