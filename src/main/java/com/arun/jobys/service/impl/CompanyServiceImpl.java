@@ -16,4 +16,21 @@ public class CompanyServiceImpl implements ICompanyService {
     public List<Company> getAllCompanies() {
         return companyRepository.findAll();
     }
+
+    private CompanyDto transferCompanyDto(Company company){
+        return new CompanyDto(
+                company.getId(),
+                company.getName(),
+                company.getLogo(),
+                company.getIndustry(),
+                company.getSize(),
+                company.getRating(),
+                company.getLocations(),
+                company.getFounded(),
+                company.getDescription(),
+                company.getEmployees(),
+                company.getWebsite(),
+                company.getCreatedAt()
+        );
+    }
 }
