@@ -11,7 +11,7 @@
 	<groupId>com.arun</groupId>
 	<artifactId>jobys</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name/>
+    <name/>
 	<description/>
 	<url/>
 	<licenses>
@@ -20,7 +20,7 @@
 	<developers>
 		<developer/>
 	</developers>
-	<scm>
+    <scm>
 		<connection/>
 		<developerConnection/>
 		<tag/>
