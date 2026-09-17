@@ -6,7 +6,7 @@ import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
 
 @Entity
-@Table(name = "")
+@Table(name = "Contacts")
 @Getter @Setter
 public class Contact {
     @Id
