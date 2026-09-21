@@ -28,6 +28,7 @@ public class ContactServiceImpl implements IContactService {
         BeanUtils.copyProperties(contactRequestDto, contact); //copying source bean fields to destination bean
         contact.setCreatedAt(Instant.now());
         contact.setCreatedBy("Admin"); //can change later when authentication is added
+        contact.setStatus("NEW");
         return contact;
 
     }
