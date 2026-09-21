@@ -1,8 +1,8 @@
 package com.arun.jobys.company.controller;
 
+import com.arun.jobys.company.service.ICompanyService;
 import com.arun.jobys.dto.CompanyDto;
 import com.arun.jobys.entity.Company;
-import com.arun.jobys.service.ICompanyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
