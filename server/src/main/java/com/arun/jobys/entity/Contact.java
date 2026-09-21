@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
 
+import java.time.Instant;
+
 @Entity
 @Table(name = "Contacts")
 @Getter @Setter
@@ -33,4 +35,16 @@ public class Contact {
 
     @Column(name = "user_type", nullable = false, length = 50)
     private String userType;
+
+    @Column(name = "created_at", nullable = false)
+    private Instant createdAt;
+
+    @Column(name = "created_by", nullable = false, length = 20)
+    private String createdBy;
+
+    @Column(name = "updated_at")
+    private Instant updatedAt;
+
+    @Column(name = "updated_by", length = 20)
+    private String updatedBy;
 }
