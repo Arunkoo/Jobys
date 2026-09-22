@@ -2,6 +2,7 @@ package com.arun.jobys.contact.controller;
 
 import com.arun.jobys.contact.service.impl.ContactServiceImpl;
 import com.arun.jobys.dto.ContactRequestDto;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,7 @@ public class ContactController {
     private final ContactServiceImpl contactService;
 
     @PostMapping(version = "1.0")
-    public ResponseEntity<String> saveContactMsg(@RequestBody ContactRequestDto contactRequestDto){
+    public ResponseEntity<String> saveContactMsg(@RequestBody @Valid ContactRequestDto contactRequestDto){
         boolean isSaved = contactService.saveContact(contactRequestDto);
         if(isSaved){
             return ResponseEntity.status(HttpStatus.CREATED)
