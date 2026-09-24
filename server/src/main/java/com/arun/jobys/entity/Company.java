@@ -10,7 +10,7 @@ import java.time.Instant;
 @Entity
 @Table(name = "Companies")
 @Getter @Setter
-public class Company {
+public class Company extends baseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id", nullable = false)
@@ -46,16 +46,4 @@ public class Company {
 
     @Column(name = "Website", length = 500)
     private String website;
-
-    @Column(name = "Created_At", nullable = false)
-    private Instant createdAt;
-
-    @Column(name = "Created_By", nullable = false, length = 20)
-    private String createdBy;
-
-    @Column(name = "Updated_At")
-    private Instant updatedAt;
-
-    @Column(name = "Updated_By", length = 20)
-    private String updatedBy;
 }
