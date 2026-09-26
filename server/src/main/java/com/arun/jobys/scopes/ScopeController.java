@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/scope")
 @RequiredArgsConstructor
-public class ScopeControllerBean {
+public class ScopeController {
     private final RequestScopeBean requestScope;
     private final SessionScopeBean sessionScope;
+    private final ApplicationScopeBean applicationScope;
 
     @GetMapping("/request")
     public ResponseEntity<String> testRequestScope(){
@@ -25,9 +26,15 @@ public class ScopeControllerBean {
         return ResponseEntity.ok().body(sessionScope.getUsername());
     }
 
+    @GetMapping("/application")
+    public ResponseEntity<Integer> testApplicationScope(){
+        applicationScope.incrementVisitorCount();
+        return ResponseEntity.ok().body(applicationScope.getVisitorCount());
+    }
+
     @GetMapping("/test")
-    public ResponseEntity<String> testScope(){
-        return ResponseEntity.ok().body(requestScope.getUsername());
+    public ResponseEntity<Integer> testScope(){
+        return ResponseEntity.ok().body(applicationScope.getVisitorCount());
     }
 
 }
