@@ -5,12 +5,10 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
 
-import java.time.Instant;
-
 @Entity
 @Table(name = "Contacts")
 @Getter @Setter
-public class Contact extends baseEntity{
+public class Contact extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

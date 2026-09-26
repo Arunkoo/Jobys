@@ -17,7 +17,7 @@ import java.time.Instant;
 @Getter @Setter
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public class baseEntity {
+public class BaseEntity {
     //only use these fields while creation of data
     @CreatedDate
     @CreationTimestamp
