@@ -2,6 +2,7 @@ package com.arun.jobys.dto;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.List;
 
 public record CompanyDto(
         Long id,
@@ -15,5 +16,6 @@ public record CompanyDto(
         String description,
         Integer employees,
         String website,
-        Instant createdAt) {
+        Instant createdAt,
+        List<JobDto> jobs ) {
 }
