@@ -28,11 +28,4 @@ public class ContactController {
                     .body("Failed to save message");
         }
     }
-
-    @GetMapping
-    public ResponseEntity<String> fetchOpenContacts(
-            @RequestParam @Validated @NotBlank(message = "Status cannot be empty")
-            String Status){
-        return ResponseEntity.ok("These are the open contacts with status: "+ Status);
-    }
 }
