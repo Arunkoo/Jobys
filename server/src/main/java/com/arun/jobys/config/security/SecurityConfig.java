@@ -8,8 +8,12 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.RegexRequestMatcher;
 
@@ -37,6 +41,19 @@ public class SecurityConfig {
                 .formLogin(AbstractHttpConfigurer::disable)
                 .httpBasic(Customizer.withDefaults())
                 .build();
+    }
+
+    @Bean
+    public UserDetailsService userDetailsService(){
+        var user1 = User.builder().username("Arun")
+                .password("$2a$10$SnlsaAeZKtQ3EvZ/AkKbf.3zMQqYHICrIqr9uK.nb05s68zlw/tuW")
+                .roles("USER").build();
+        var user2 = User.builder().username("Admin")
+                .password("$2a$10$6.egV1u7jF8vc1z/B1Fds.9Ktxq1qOzYdDVQUxVO2hm4T3xJEzzfy")
+                .roles("ADMIN").build();
+
+        //save it in InMemory...
+        return new InMemoryUserDetailsManager(user1, user2);
     }
 
     @Bean
