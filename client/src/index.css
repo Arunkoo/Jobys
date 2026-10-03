@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
   --color-background: var(--background);
@@ -10,24 +13,48 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
 }
 
 :root {
-  --background: #f6f7f3;
-  --foreground: #1d2823;
-  --border: #d9dfd9;
-  --input: #d9dfd9;
-  --ring: #1d6b52;
-  --primary: #1d6b52;
-  --primary-foreground: #f6f7f3;
-  --muted: #e9eee9;
-  --muted-foreground: #64716a;
-  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  --background: #f5f7f4;
+  --foreground: #24342d;
+  --border: #dfe6df;
+  --input: #dfe6df;
+  --ring: #3c7657;
+  --primary: #2f6749;
+  --primary-foreground: #ffffff;
+  --muted: #edf2ed;
+  --muted-foreground: #6c7b72;
+  --accent: #3c7657;
+  --accent-foreground: #ffffff;
+  --card: #ffffff;
+  --card-foreground: #24342d;
+  font-family: "Poppins", sans-serif;
   color: var(--foreground);
   background: var(--background);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+.dark {
+  --background: #19251e;
+  --foreground: #eef4ef;
+  --border: #34473a;
+  --input: #34473a;
+  --ring: #82b99a;
+  --primary: #82b99a;
+  --primary-foreground: #19251e;
+  --muted: #24352a;
+  --muted-foreground: #aec0b2;
+  --accent: #82b99a;
+  --accent-foreground: #ffffff;
+  --card: #203126;
+  --card-foreground: #eef4ef;
 }
 
 * {
@@ -39,4 +66,16 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
+}
+
+button,
+a,
+input,
+select {
+  font: inherit;
+}
+
+::selection {
+  color: var(--primary-foreground);
+  background: var(--primary);
 }

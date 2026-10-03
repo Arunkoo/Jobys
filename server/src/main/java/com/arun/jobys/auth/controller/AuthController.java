@@ -23,7 +23,6 @@ public class AuthController {
 
     @PostMapping(value = "/login/public", version = "1.0")
     public ResponseEntity<LoginResponseDto> login(@RequestBody  LoginRequestDto loginRequestDto){
-
         try{
             var authenticatedResult = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
